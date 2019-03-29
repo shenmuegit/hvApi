@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script src="@{ctxPath}/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="@{ctxPath}/js/v9md5.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            var url = $("#url").val();
+            $.ajax({
+                type:"get",
+                url:"/h/mp4?url=" + url,
+                dataType:"json",
+                async: false,
+                success:function(data) {
+                    var source = strencode(data.data[0],data.data[1],data.data[2]);
+                    var html = $.parseHTML(source);
+                    $.each( html, function( i, el ) {
+                        window.location.href=el.src;
+                    });
+                },
+            });
+        })
+
+    </script>
+</head>
+<body>
+<input id="url" style="display:none" value="@{url}" />
+</body>
+</html>
