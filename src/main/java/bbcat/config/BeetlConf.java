@@ -16,9 +16,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author bibimao
- */
 @Configuration
 public class BeetlConf {
 

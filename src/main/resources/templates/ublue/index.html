@@ -17,9 +17,6 @@ a:hover img{ opacity:.9;}
 #waterfall{ margin:50px auto; position:relative; overflow:hidden;}
 .picList{ width:222px; box-shadow:0 0 3px #CCC; background:#FFF; margin:0 6px 12px 6px; position:absolute; left:-999px; display:block;}
 .picList:hover{ box-shadow:1px 1px 5px #BBB;}
-.picList:hover .shareIcon{ display:block;}
-.picList .shareIcon{ display:none; width:100px; height:24px; background:url(@{ctxPath}/img/share_icon.png) no-repeat; cursor:pointer; position:absolute; top:11px; right:11px; z-index:2; opacity:.9;}
-.picList .shareIcon:hover{ opacity:1;}
 .picThumbnail{ border-bottom:1px solid #EEE;}
 .picThumbnail a{ display:block; margin:11px; max-height:600px; overflow:hidden;}
 .picThumbnail img{ max-width:200px; display: block;}
@@ -102,7 +99,7 @@ $(function() {
                         var img=json[i].img;
                         var desc=json[i].title;
                         var url=ctxLocal+"/h/details?url="+json[i].url;
-                        var html = 	"<div class=\"picList\" align=\"center\"    ><i class=\"shareIcon\"></i><div class=\"picThumbnail\"><a target=\"view_window\" href=\""+url+"\"><img src="+img+"></a></div><div class=\"picDescription\"><p>"+desc+"</p></div></div>"
+                        var html = 	"<div class=\"picList\" align=\"center\"    ></i><div class=\"picThumbnail\"><a target=\"view_window\" href=\""+url+"\"><img src="+img+"></a></div><div class=\"picDescription\"><p>"+desc+"</p></div></div>"
                         $("#waterfall").append(html);
                         waterfall();
                     }
